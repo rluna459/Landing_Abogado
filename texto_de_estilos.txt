@@ -1,0 +1,7 @@
+• Minimalista: Utiliza la menor cantidad de elementos posible, priorizando el espacio en blanco, una paleta de colores limitada y tipografías limpias para transmitir orden y rapidez.
+• Plano (Flat Design): Prescinde de sombras, degradados y efectos tridimensionales, apostando por formas bidimensionales y colores sólidos.
+• Bento: Organiza el contenido en una cuadrícula compacta de contenedores con esquinas redondeadas, ideal para estructurar información densa de forma limpia.
+• Neobrutalismo / Antidiseño: Rompe las reglas tradicionales con altos contrastes, sombras duras, colores discordantes y tipografías sobredimensionadas para generar impacto.
+• Maximalismo: Se opone al minimalismo mediante composiciones recargadas, colores vibrantes, tipografías experimentales y texturas para provocar emociones intensas.
+• Retro / Y2K: Recupera la estética de décadas pasadas (como los 80, 90 o principios de los 2000) con texturas granuladas, formas geométricas simples y colores nostálgicos.
+• Estilo Suizo: Emplea estrictas cuadrículas modulares, tipografías sans-serif clásicas y una fuerte jerarquía visual combinada con fotografía clara.

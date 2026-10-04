@@ -1,0 +1,339 @@
+/* ==========================================================
+   El Abogado Premium — estilo minimalista
+   Paleta: blanco, tinta, gris, un único acento
+   ========================================================== */
+
+/* ---------- Variables ---------- */
+:root {
+    --bg: #ffffff;
+    --bg-soft: #f6f6f4;
+    --ink: #111111;
+    --muted: #6b6b6b;
+    --line: #e5e5e2;
+    --accent: #1f3a5f;
+
+    --font-title: "Special Gothic Expanded One", "Helvetica Neue", Arial, sans-serif;
+    --font-body: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    --space-1: 0.5rem;
+    --space-2: 1rem;
+    --space-3: 2rem;
+    --space-4: 4rem;
+    --space-5: 8rem;
+
+    --max-width: 960px;
+    --header-h: 64px;
+    --radius: 2px;
+    --transition: 0.2s ease;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+img, iframe, video { display: block; max-width: 100%; }
+ul { list-style: none; }
+a { color: inherit; text-decoration: none; }
+
+/* ---------- Tipografía ---------- */
+h2, h3, h4 {
+    font-family: var(--font-title);
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+h2 { font-size: clamp(1.75rem, 4vw, 2.75rem); margin-bottom: var(--space-3); }
+h3 { font-size: clamp(1.25rem, 3vw, 1.75rem); margin-bottom: var(--space-2); }
+h4 { font-size: 1.1rem; margin-bottom: var(--space-1); }
+
+p { color: var(--muted); max-width: 62ch; }
+
+/* ---------- Header / Nav ---------- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: var(--header-h);
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+}
+
+nav {
+    height: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--space-2);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+nav ul { display: flex; gap: var(--space-3); }
+
+nav a {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: var(--space-1) 0;
+    border-bottom: 1px solid transparent;
+    transition: color var(--transition), border-color var(--transition);
+}
+
+nav a:hover,
+nav a.is-active {          /* .is-active: lo podés poner con JS (scroll spy) */
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+}
+
+/* ---------- Secciones ---------- */
+section {
+    padding: var(--space-5) var(--space-2);
+    scroll-margin-top: var(--header-h);
+}
+
+section > div {
+    max-width: var(--max-width);
+    margin: 0 auto;
+}
+
+/* ---------- Botones ---------- */
+button {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0.9rem 1.8rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--ink);
+    background: var(--ink);
+    color: var(--bg);
+    transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+button:hover { background: var(--accent); border-color: var(--accent); }
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+button:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Botón secundario (outline) */
+.btn-outline,
+#Email,
+#YouTube {
+    background: transparent;
+    color: var(--ink);
+}
+.btn-outline:hover,
+#Email:hover,
+#YouTube:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+}
+
+/* ---------- Inicio ---------- */
+#SeccionInicio {
+    min-height: calc(100vh - var(--header-h));
+    display: flex;
+    align-items: center;
+}
+
+.Contenedor_Incio h2 {
+    font-size: clamp(2.25rem, 7vw, 4.5rem);
+    max-width: 14ch;
+}
+
+.Contenedor_Incio p {
+    font-size: 1.15rem;
+    margin-bottom: var(--space-3);
+}
+
+/* ---------- Abogado ---------- */
+#SeccionAbogado { background: var(--bg-soft); }
+
+.Contenedor_Abogado {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+}
+
+.Contenedor_Abogado img {
+    width: 100%;
+    max-width: 320px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    filter: grayscale(10%);
+}
+.Contenedor_Abogado img:hover { filter: grayscale(0); }
+
+.Contenedor_Abogado p + p,
+.Contenedor_Abogado p { margin-bottom: var(--space-2); }
+
+.Contenedor_Abogado .acciones { display: flex; gap: var(--space-2); flex-wrap: wrap; }
+
+@media (min-width: 768px) {
+    .Contenedor_Abogado {
+        grid-template-columns: 320px 1fr;
+        column-gap: var(--space-4);
+        align-items: start;
+    }
+    .Contenedor_Abogado img { grid-row: 1 / span 4; }
+}
+
+/* ---------- Servicios ---------- */
+.Contenedor_Servicio {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3) var(--space-4);
+}
+.Contenedor_Servicio h2 { grid-column: 1 / -1; margin-bottom: 0; }
+
+.contenedor-civil,
+.contenedor-Penal,
+.contenedor-Laboral,
+.contenedor-Familia {
+    padding-top: var(--space-2);
+    border-top: 1px solid var(--ink);
+}
+
+.contenedor-civil p,
+.contenedor-Penal p,
+.contenedor-Laboral p,
+.contenedor-Familia p { margin-bottom: var(--space-2); }
+
+/* Botones "Más información" como enlace de texto */
+.boton-MasInfo-Civil,
+.boton-MasInfo-Penal,
+.boton-MasInfo-Laboral,
+.boton-MasInfo-Familia {
+    padding: 0 0 2px;
+    background: transparent;
+    color: var(--ink);
+    border: 0;
+    border-bottom: 1px solid var(--ink);
+    border-radius: 0;
+}
+.boton-MasInfo-Civil:hover,
+.boton-MasInfo-Penal:hover,
+.boton-MasInfo-Laboral:hover,
+.boton-MasInfo-Familia:hover {
+    background: transparent;
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+@media (min-width: 768px) {
+    .Contenedor_Servicio { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Noticias ---------- */
+#SeccionNoticias { background: var(--bg-soft); }
+
+.Contenedor_Noticias > p { margin-bottom: var(--space-3); }
+
+.Contenedor_Noticias .videos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+}
+
+.video-wrap {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--ink);
+}
+.video-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+@media (min-width: 768px) {
+    .Contenedor_Noticias .videos { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ---------- Contacto ---------- */
+.Contenedor_Contacto { max-width: 560px; }
+
+.Contenedor_Contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+input,
+textarea {
+    width: 100%;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    color: var(--ink);
+    background: transparent;
+    padding: 0.9rem 0;
+    border: 0;
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    transition: border-color var(--transition);
+}
+input::placeholder,
+textarea::placeholder { color: var(--muted); }
+input:focus,
+textarea:focus { outline: none; border-bottom-color: var(--ink); }
+
+textarea { min-height: 140px; resize: vertical; }
+
+/* Estados de validación (para tu JS) */
+.input-error { border-bottom-color: #b3261e; }
+.mensaje-error {
+    font-size: 0.8rem;
+    color: #b3261e;
+    margin-top: -0.5rem;
+}
+.mensaje-ok { font-size: 0.9rem; color: var(--accent); }
+
+.Contenedor_Contacto button { align-self: flex-start; margin-top: var(--space-1); }
+
+/* ---------- Utilidades para JS ---------- */
+.oculto { display: none !important; }
+
+.reveal {                       /* opcional: animación al hacer scroll */
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- Accesibilidad ---------- */
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 600px) {
+    section { padding: var(--space-4) var(--space-2); }
+    nav { justify-content: center; }
+    nav ul { gap: var(--space-2); }
+    nav a { font-size: 0.7rem; }
+}

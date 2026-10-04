@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Abogado Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#SeccionInicio">Inicio</a></li>
+                <li><a href="#SeccionAbogado">Abogado</a></li>
+                <li><a href="#SeccionServicios">Servicios</a></li>
+                <li><a href="#SeccionNoticias">Noticias</a></li>
+                <li><a href="#SeccionContacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!---------SECCION INICIO------------->
+        <section id="SeccionInicio">
+            <div class="Contenedor_Incio">
+                <h2>Estudio El Abogado Premium</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, aliquid possimus. Fugiat consectetur expedita aspernatur nostrum voluptatem quas repellat! Neque a eaque aliquam assumenda error suscipit vero temporibus quis accusantium.</p>
+                <button id="btnContacto" class="boton_contacto" data-target="#SeccionContacto">Contactate con nosotros</button>
+            </div>
+        </section>
+
+        <!---------SECCION ABOGADO------------->
+        <section id="SeccionAbogado">
+            <div class="Contenedor_Abogado">
+                <img src="imagenes/lean_riccio.webp" alt="Retrato del abogado">
+                <h3>Abogado</h3>
+                <p>A través de mi canal de YouTube analizo los casos judiciales más relevantes de la actualidad, con un enfoque claro, accesible y riguroso. Mi propósito es acercar el derecho a todas las personas, explicando de forma sencilla cómo funciona y cómo incide en nuestra vida cotidiana.</p>
+                <p>Me especializo en descomponer noticias jurídicas complejas, traducir conceptos legales al lenguaje común y ofrecer una perspectiva informada sobre los temas que generan debate en la sociedad. No solo busco informar, sino también fomentar la reflexión crítica y la conciencia sobre el papel fundamental que cumplen las leyes en nuestra realidad.</p>
+                <div class="acciones">
+                    <button id="Email" type="button">Email</button>
+                    <button id="YouTube" type="button">YouTube</button>
+                </div>
+            </div>
+        </section>
+
+        <!--------SECCION SERVICIOS ---------------->
+        <section id="SeccionServicios">
+            <div class="Contenedor_Servicio">
+                <h2>Áreas de Especialización Legal</h2>
+                <div class="contenedor-civil" data-servicio="civil">
+                    <h4>Civil y Comercial</h4>
+                    <p>Nos especializamos en defender tus derechos.</p>
+                    <button type="button" class="boton-MasInfo-Civil" data-servicio="civil">Más información</button>
+                </div>
+                <div class="contenedor-Penal" data-servicio="penal">
+                    <h4>Penal</h4>
+                    <p>Ya sea que hayas sido víctima de un delito...</p>
+                    <button type="button" class="boton-MasInfo-Penal" data-servicio="penal">Más información</button>
+                </div>
+                <div class="contenedor-Laboral" data-servicio="laboral">
+                    <h4>Laboral</h4>
+                    <p>Si fuiste despedido de forma injustificada.</p>
+                    <button type="button" class="boton-MasInfo-Laboral" data-servicio="laboral">Más información</button>
+                </div>
+                <div class="contenedor-Familia" data-servicio="familia">
+                    <h4>Familia</h4>
+                    <p>Nuestro equipo brinda acompañamiento legal...</p>
+                    <button type="button" class="boton-MasInfo-Familia" data-servicio="familia">Más información</button>
+                </div>
+            </div>
+        </section>
+
+        <!--------------SECCION NOTICIAS CON VIDEOS------------->
+        <section id="SeccionNoticias">
+            <div class="Contenedor_Noticias">
+                <h2>Noticias</h2>
+                <p>Mantente informado sobre las últimas novedades en el ámbito legal, cambios normativos, fallos judiciales relevantes y tendencias en el ejercicio del derecho. Nuestro compromiso es brindarte información clara, precisa y actualizada para que estés siempre un paso adelante.</p>
+                <div class="videos">
+                    <div class="video-wrap">
+                        <iframe src="https://www.youtube.com/embed/dVlhRHm0QOg" title="Video 1" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-wrap">
+                        <iframe src="https://www.youtube.com/embed/rsjnAoBzCv4" title="Video 2" loading="lazy" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--------------SECCION FORMULARIO CONTACTO------------>
+        <section id="SeccionContacto">
+            <div class="Contenedor_Contacto">
+                <form id="formContacto" novalidate>
+                    <h3>Contactate con nosotros</h3>
+                    <input type="text" name="NombreCompleto" id="nombre" placeholder="Nombre completo" aria-label="Nombre completo" required>
+                    <input type="email" name="Mail" id="mail" placeholder="Correo electrónico" aria-label="Correo electrónico" required>
+                    <textarea name="consulta" id="TuConsulta" placeholder="Escribí tu consulta" aria-label="Consulta" required></textarea>
+                    <p id="formMensaje" class="oculto" role="status"></p>
+                    <button type="submit">Enviar consulta</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script src="Script.js" defer></script>
+</body>
+</html>
